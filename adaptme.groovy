@@ -16,10 +16,10 @@ class RoundHole {
 
 class SquarePegAdapter extends SquarePeg{
     def getRadius() {
-        Math.sqrt(((peg.width / 2) ** 2) * 2)
+        Math.sqrt(((width / 2) ** 2) * 2)
     }
     String toString() {
-        "SquarePegAdapter with peg width $peg.width (and notional radius $radius)"
+        "SquarePegAdapter with peg width $width (and notional radius $radius)"
     }
 }
 
