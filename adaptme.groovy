@@ -14,8 +14,7 @@ class RoundHole {
     String toString() { "RoundHole with radius $radius" }
 }
 
-class SquarePegAdapter {
-    def peg
+class SquarePegAdapter extends SquarePeg{
     def getRadius() {
         Math.sqrt(((peg.width / 2) ** 2) * 2)
     }
@@ -24,11 +23,9 @@ class SquarePegAdapter {
     }
 }
 
-
-
 def hole = new RoundHole(radius: 4.0)
 (4..7).each { w ->
-    def peg = new SquarePegAdapter(peg: new SquarePeg(width: w))
+    def peg = new SquarePegAdapter(width: w)
     if (hole.pegFits(peg)) {
         println "peg $peg fits in hole $hole"
     } else {
